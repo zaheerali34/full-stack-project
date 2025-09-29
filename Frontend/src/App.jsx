@@ -1,9 +1,10 @@
 import React from 'react'
+import LandingPage from './Pages/LandingPage'
 
 function App() {
   return (
-    <div>
-      <h1 className='text-3xl text-red-500'>Hello Test</h1>
+    <div className='font-[font1]'>
+      <LandingPage/>
     </div>
   )
 }
