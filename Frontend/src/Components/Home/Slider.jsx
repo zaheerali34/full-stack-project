@@ -13,7 +13,7 @@ function Slider() {
   const nextRef = useRef(null);
 
   return (
-    <div className="w-full px-7 mt-10">
+    <div className="w-full px-8 -mt-10">
       <div className="w-full relative">
         <button
           ref={prevRef}
