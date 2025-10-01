@@ -37,35 +37,48 @@ function Card() {
       </div>
 
       <div className="w-full px-10">
-        <div className="w-full h-[350px] bg-red-600/30 rounded-xl mt-10">
-          <img
+        <div className="w-full h-[350px] bg-red-600/30 rounded-xl mt-10 flex items-center justify-between">
+          <div className="px-12">
+            <h2 className="text-[2.1rem]">{content[activeNavItem]?.top?.tage}</h2>
+            <p className="text-md">{content[activeNavItem]?.top?.pelegrah}</p>
+
+            <button className="p-2 bg-white rounded-md text-md font-semibold text-zinc-800 mt-10">Learn more</button>
+          </div>
+
+           <img
             src={content[activeNavItem]?.top?.img}
             alt=""
-            className="w-[10rem] object-cover rounded-xl"
+            className="w-1/3 object-cover rounded-xl"
           />
-          <h1>{content[activeNavItem]?.top?.tage}</h1>
-          <p>{content[activeNavItem]?.top?.pelegrah}</p>
         </div>
 
         <div className="w-full flex items-center justify-center gap-5 mt-8">
-          <div className="w-full h-[400px] bg-blue-500 rounded-md">
-            <h2>{content[activeNavItem]?.One?.tage}</h2>
-            <img src={content[activeNavItem]?.One?.img} alt="" className="w-[10rem] object-cover rounded-xl" />
+          <div className="w-full h-full bg-white hover:shadow-2xl transition duration-500 border-[1px] rounded-2xl border-zinc-300 overflow-hidden">
+            <img src={content[activeNavItem]?.One?.img} alt="" className="w-full object-cover rounded-xl" />
+            <h2 className="text-md px-6 pt-6 font-semibold">{content[activeNavItem]?.One?.tage}</h2>
+            <p className="px-6 py-3 text-sm">{content[activeNavItem]?.One?.pelegrah}</p>
+             <button className="p-2 bg-white rounded-md text-md font-semibold text-zinc-800 mt-10 border-[1px] border-zinc-300 my-6 mx-6">Learn more</button>
           </div>
           
-          <div className="w-full h-[400px] bg-blue-500 rounded-md">
-            <h2>{content[activeNavItem]?.Two?.tage}</h2>
-            <img src={content[activeNavItem]?.Two?.img} alt="" className="w-[10rem] object-cover rounded-xl" />
+          <div className="w-full h-full bg-white hover:shadow-2xl transition duration-500 border-[1px] rounded-2xl border-zinc-300 overflow-hidden">
+            <img src={content[activeNavItem]?.Two?.img} alt="" className="w-full object-cover rounded-xl" />
+            <h2 className="text-md px-6 pt-6 font-semibold">{content[activeNavItem]?.Two?.tage}</h2>
+            <p className="px-6 py-3 text-sm">{content[activeNavItem]?.Two?.pelegrah}</p>
+             <button className="p-2 bg-white rounded-md text-md font-semibold text-zinc-800 mt-10 border-[1px] border-zinc-300 my-6 mx-6">Learn more</button>
           </div>
 
-           <div className="w-full h-[400px] bg-blue-500 rounded-md">
-            <h2>{content[activeNavItem]?.Three?.tage}</h2>
-            <img src={content[activeNavItem]?.Three?.img} alt="" className="w-[10rem] object-cover rounded-xl" />
+           <div className="w-full h-full bg-white hover:shadow-2xl transition duration-500 border-[1px] rounded-2xl border-zinc-300 overflow-hidden">
+            <img src={content[activeNavItem]?.Three?.img} alt="" className="w-full object-cover rounded-xl" />
+            <h2 className="text-md px-6 pt-6 font-semibold">{content[activeNavItem]?.Three?.tage}</h2>
+            <p className="px-6 py-3 text-sm">{content[activeNavItem]?.Three?.pelegrah}</p>
+             <button className="p-2 bg-white rounded-md text-md font-semibold text-zinc-800 mt-10 border-[1px] border-zinc-300 my-6 mx-6">Learn more</button>
           </div>
 
-           <div className="w-full h-[400px] bg-blue-500 rounded-md">
-            <h2>{content[activeNavItem]?.Four?.tage}</h2>
-            <img src={content[activeNavItem]?.Four?.img} alt="" className="w-[10rem] object-cover rounded-xl" />
+           <div className="w-full h-full bg-white hover:shadow-2xl transition duration-500 border-[1px] rounded-2xl border-zinc-300 overflow-hidden">
+            <img src={content[activeNavItem]?.Four?.img} alt="" className="w-full object-cover rounded-xl" />
+            <h2 className="text-md px-6 pt-6 font-semibold">{content[activeNavItem]?.Four?.tage}</h2>
+            <p className="px-6 py-3 text-sm">{content[activeNavItem]?.Four?.pelegrah}</p>
+             <button className="p-2 bg-white rounded-md text-md font-semibold text-zinc-800 mt-10 border-[1px] border-zinc-300 my-6 mx-6">Learn more</button>
           </div>
         </div>
       </div>
