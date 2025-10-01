@@ -4,6 +4,7 @@ import ImageDB from "../../utils/ImageDB";
 import { Pagination, Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -63,10 +64,10 @@ function Slider() {
           }}
           className="w-full flex items-center justify-center"
         >
-          {ImageDB.map((item, idx) => (
-            <SwiperSlide key={idx} className="w-fill py-20">
+          {ImageDB.map((items, idx) => (
+            <SwiperSlide key={idx} className="w-full py-20">
               <img
-                src={item.url}
+                src={items.url}
                 alt=""
                 className="w-[200px] object-cover rounded-xl transform transition-transform duration-500 hover:scale-110 max-md:hover:scale-100"
               />

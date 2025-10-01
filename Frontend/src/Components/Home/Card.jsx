@@ -3,6 +3,7 @@ import content from "../../utils/CardImage.js";
 
 function Card() {
   const [activeNavItem, setActiveNavItem] = useState("Everyone");
+  
   const navbar = [
     "Everyone",
     "Marketers",
@@ -13,9 +14,9 @@ function Card() {
   ];
 
   return (
-    <div className="w-full h-full flex items-center justify-center flex-col gap-4 ">
+    <div className="w-full h-full flex items-center justify-center flex-col py-10 gap-4 ">
       <h2 className="text-[4rem] ">Make any task a breeze</h2>
-      <p className="text-[1.3rem] text-gray-800-">
+      <p className="text-[1.3rem] text-gray-800">
         From editing to organising, these most-loved tools do the heavy lifting.
       </p>
 
@@ -35,22 +36,36 @@ function Card() {
         ))}
       </div>
 
-      <div className="w-full">
+      <div className="w-full px-10">
         <div className="w-full h-[350px] bg-red-600/30 rounded-xl mt-10">
           <img
             src={content[activeNavItem]?.top?.img}
             alt=""
-            className="w-[14rem] m-auto object-cover rounded-xl"
+            className="w-[10rem] object-cover rounded-xl"
           />
           <h1>{content[activeNavItem]?.top?.tage}</h1>
+          <p>{content[activeNavItem]?.top?.pelegrah}</p>
         </div>
 
         <div className="w-full flex items-center justify-center gap-5 mt-8">
           <div className="w-full h-[400px] bg-blue-500 rounded-md">
-            <h2>{content[activeNavItem]?.left?.tage}</h2>
+            <h2>{content[activeNavItem]?.One?.tage}</h2>
+            <img src={content[activeNavItem]?.One?.img} alt="" className="w-[10rem] object-cover rounded-xl" />
           </div>
+          
           <div className="w-full h-[400px] bg-blue-500 rounded-md">
-            <h2>{content[activeNavItem]?.right?.tage}</h2>
+            <h2>{content[activeNavItem]?.Two?.tage}</h2>
+            <img src={content[activeNavItem]?.Two?.img} alt="" className="w-[10rem] object-cover rounded-xl" />
+          </div>
+
+           <div className="w-full h-[400px] bg-blue-500 rounded-md">
+            <h2>{content[activeNavItem]?.Three?.tage}</h2>
+            <img src={content[activeNavItem]?.Three?.img} alt="" className="w-[10rem] object-cover rounded-xl" />
+          </div>
+
+           <div className="w-full h-[400px] bg-blue-500 rounded-md">
+            <h2>{content[activeNavItem]?.Four?.tage}</h2>
+            <img src={content[activeNavItem]?.Four?.img} alt="" className="w-[10rem] object-cover rounded-xl" />
           </div>
         </div>
       </div>
