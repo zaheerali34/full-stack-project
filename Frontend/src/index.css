@@ -10,3 +10,6 @@
     src: url(../public/Font/font2.woff2);
 }
 
+.cardContainer:hover .cardImage {
+    transform: scale(1.05);
+}
