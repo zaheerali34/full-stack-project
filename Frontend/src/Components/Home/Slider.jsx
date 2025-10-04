@@ -64,7 +64,7 @@ function Slider() {
           }}
           className="w-full flex items-center justify-center"
         >
-          {ImageDB.map((items, idx) => (
+          {ImageDB.ImgSlider.map((items, idx) => (
             <SwiperSlide key={idx} className="w-full py-20">
               <img
                 src={items.url}

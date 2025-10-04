@@ -1,5 +1,5 @@
 import React from "react";
-import ImageTemp from "../../utils/ImageTemp.js";
+import ImageDB from "../../utils/ImageDB";
 
 function Templates() {
   return (
@@ -11,10 +11,10 @@ function Templates() {
       </p>
 
       <div className="w-full mt-12 [column-count:6]">
-        {ImageTemp.map((item) => (
+        {ImageDB.ImageTemp.map((item) => (
           <img
             src={item.img}
-            alt={`Template ${item.id}`}
+            alt={`Template Image`}
             className="w-full object-cover rounded-xl mb-4"
           />
         ))}
