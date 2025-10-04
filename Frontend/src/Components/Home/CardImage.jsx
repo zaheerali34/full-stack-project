@@ -11,10 +11,7 @@ function CardImage({ activeNavItem, content }) {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.2 }}
-          style={{
-            backgroundColor: content[activeNavItem]?.top?.bgColor,
-            color: content[activeNavItem]?.top?.textColor,
-          }}
+          style={{backgroundColor: content[activeNavItem].top.bgColor, color: content[activeNavItem].top.textColor}}
           className="w-full h-[350px] rounded-xl mt-10 flex items-center justify-between overflow-hidden cursor-pointer"
         >
           <div className="px-12">
@@ -35,7 +32,7 @@ function CardImage({ activeNavItem, content }) {
           />
         </motion.div>
       </AnimatePresence>
-
+      
       <AnimatePresence mode="wait">
         <motion.div
           key={activeNavItem}
