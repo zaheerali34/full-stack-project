@@ -5,6 +5,8 @@ import Card from '../Components/Home/Card'
 import PriceCard from '../Components/Home/PriceCard'
 import Templates from '../Components/Home/Templates'
 import Section from '../Components/Home/Section'
+import BgSection from '../Components/Home/BgSection'
+import Footer from '../Layout/Footer'
 
 function LandingPage() {
   return (
@@ -15,6 +17,8 @@ function LandingPage() {
         <PriceCard />
         <Templates />
         <Section />
+        <BgSection />
+        <Footer />
     </div>
   )
 }
