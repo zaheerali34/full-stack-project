@@ -1,4 +1,5 @@
 import React from 'react';
+import MeunBar from '../Components/MeunBar';
 
 function Header() {
   return (
@@ -20,6 +21,8 @@ function Header() {
           <button className='px-3 py-[4px] border-[1px] rounded-[8px] border-zinc-200 font-semibold text-zinc-700 hover:bg-zinc-100 transition duration-500 cursor-pointer'>Sign up</button>
           <button className='bg-[#9653f5] px-3 py-[5px] rounded-[8px] text-white font-semibold hover:bg-[#7628e5] transition duration-500 cursor-pointer'>Log in</button>
         </div>
+
+        {/* <MeunBar /> */}
     </div>
   )
 }

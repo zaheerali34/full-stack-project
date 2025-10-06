@@ -1,5 +1,7 @@
 import React from "react";
 import SectionLogo from "./SectionLogo";
+import ImageOne from "/image one.webp"
+import ImageTwo from "/image two.webp"
 
 
 function Section() {
@@ -22,7 +24,7 @@ function Section() {
         </div>
 
         <img
-          src="./image one.webp"
+          src={ImageOne}
           alt=""
           className="w-2/4 rounded-2xl object-cover"
         />
@@ -30,7 +32,7 @@ function Section() {
 
       <div className="w-full h-screen px-8 flex items-center gap-10 justify-between">
         <img
-          src="./image two.webp"
+          src={ImageTwo}
           alt=""
           className="w-2/4 rounded-2xl object-cover"
         />

@@ -4,9 +4,9 @@ import ImageDB from "../../utils/ImageDB";
 
 function SectionLogo() {
   return (
-    <div className="w-full overflow-hidden bg-white py-8">
+    <section className="w-full overflow-hidden py-8">
       <motion.div
-        className="flex gap-[7rem]"
+        className="flex items-center gap-[7rem]"
         animate={{ x: ["0%", "-100%"] }}
         transition={{
           ease: "linear",
@@ -19,11 +19,11 @@ function SectionLogo() {
             key={idx}
             src={items.img}
             alt={`logo image`}
-            className="w-[7rem] h-auto object-contain opacity-90 hover:opacity-100 transition-all"
+            className="w-[7rem] object-cover opacity-80 hover:opacity-100 transition-all"
           />
         ))}
       </motion.div>
-    </div>
+    </section>
   );
 }
 
