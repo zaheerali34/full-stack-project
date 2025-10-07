@@ -4,7 +4,6 @@ import ImageDB from "../../utils/ImageDB";
 import { Pagination, Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";

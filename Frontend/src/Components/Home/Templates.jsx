@@ -14,6 +14,7 @@ function Templates() {
         {ImageDB.ImageTemp.map((item) => (
           <img
             src={item.img}
+            key={item.id}
             alt={`Template Image`}
             className="w-full object-cover rounded-xl mb-4"
           />

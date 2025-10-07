@@ -3,7 +3,6 @@ import SectionLogo from "./SectionLogo";
 import ImageOne from "/image one.webp"
 import ImageTwo from "/image two.webp"
 
-
 function Section() {
   return (
     <>
