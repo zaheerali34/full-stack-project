@@ -1,20 +1,20 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @font-face {
-    font-family: 'Font1';
-    src: url(../public/Font/font1.woff2);
+  font-family: 'Font1';
+  src: url(../public/Font/font1.woff2);
 }
 
 @font-face {
-    font-family: 'Font2';
-    src: url(../public/Font/font2.woff2);
+  font-family: 'Font2';
+  src: url(../public/Font/font2.woff2);
 }
 
 .cardContainer:hover .cardImage {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .masonry {
-  column-count: 6; 
-  column-gap: 1rem; 
+  column-count: 6;
+  column-gap: 1rem;
 }

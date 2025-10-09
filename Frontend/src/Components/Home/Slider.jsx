@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import ImageDB from "../../utils/ImageDB";
-import { Pagination, Navigation } from "swiper/modules";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import ImageDB from '../../utils/ImageDB';
+import { Pagination, Navigation } from 'swiper/modules';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 function Slider() {
   const prevRef = useRef(null);
@@ -18,7 +18,7 @@ function Slider() {
         <button
           ref={prevRef}
           className="custom-swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white  text-gray-500 rounded-full w-12 h-12 flex items-center justify-center shadow-xl transition-all duration-200 border-2 border-blue-500 cursor-pointer"
-          style={{ left: "-20px" }}
+          style={{ left: '-20px' }}
           aria-label="Previous"
         >
           <ChevronLeft />
@@ -26,7 +26,7 @@ function Slider() {
         <button
           ref={nextRef}
           className="custom-swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white  text-gray-500 rounded-full w-12 h-12 flex items-center justify-center shadow-xl  transition-all duration-200 border-2 border-blue-500 cursor-pointer"
-          style={{ right: "-20px" }}
+          style={{ right: '-20px' }}
           aria-label="Next"
         >
           <ChevronRight />
@@ -57,7 +57,7 @@ function Slider() {
               spaceBetween: 15,
             },
           }}
-          onBeforeInit={(swiper) => {
+          onBeforeInit={swiper => {
             swiper.params.navigation.prevEl = prevRef.current;
             swiper.params.navigation.nextEl = nextRef.current;
           }}

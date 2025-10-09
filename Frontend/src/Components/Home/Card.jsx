@@ -1,22 +1,24 @@
-import React, { useState } from "react";
-import content from "../../utils/CardImage.js";
-import CardImage from "./CardImage.jsx";
+import React, { useState } from 'react';
+import content from '../../utils/CardImage.js';
+import CardImage from './CardImage.jsx';
 
 function Card() {
-  const [activeNavItem, setActiveNavItem] = useState("Everyone");
+  const [activeNavItem, setActiveNavItem] = useState('Everyone');
 
   const navbar = [
-    "Everyone",
-    "Marketers",
-    "Sales",
-    "SmallBusiness",
-    "Creative",
-    "Education",
+    'Everyone',
+    'Marketers',
+    'Sales',
+    'SmallBusiness',
+    'Creative',
+    'Education',
   ];
 
   return (
-    <div className="w-full h-full flex items-center justify-center flex-col py-10 gap-4 ">
-      <h2 className="text-[4rem] max-md:text-[2.5rem]">Make any task a breeze</h2>
+    <div className="w-full h-full flex items-center justify-center flex-col py-10 gap-4 max-sm:text-center">
+      <h2 className="text-[4rem] max-md:text-[2.5rem] max-sm:leading-10">
+        Make any task a breeze
+      </h2>
       <p className="text-[1.3rem] text-gray-800 max-md:text-[0.8rem]">
         From editing to organising, these most-loved tools do the heavy lifting.
       </p>
@@ -28,8 +30,8 @@ function Card() {
             onClick={() => setActiveNavItem(item)}
             className={`px-4 py-3 rounded-full cursor-pointer text-[1rem] max-md:text-[0.8rem] font-semibold hover:bg-gray-100 transition-all ${
               activeNavItem === item
-                ? "bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 text-white"
-                : ""
+                ? 'bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 text-white'
+                : ''
             }`}
           >
             {item}

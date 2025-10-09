@@ -1,16 +1,16 @@
-import React from "react";
-import { motion } from "motion/react";
-import ImageDB from "../../utils/ImageDB";
+import React from 'react';
+import { motion } from 'motion/react';
+import ImageDB from '../../utils/ImageDB';
 
 function SectionLogo() {
   return (
     <section className="w-full overflow-hidden py-8">
       <motion.div
         className="flex items-center gap-[7rem]"
-        animate={{ x: ["0%", "-100%"] }}
+        animate={{ x: ['0%', '-100%'] }}
         transition={{
-          ease: "linear",
-          duration: 25,
+          ease: 'linear',
+          duration: 20,
           repeat: Infinity,
         }}
       >

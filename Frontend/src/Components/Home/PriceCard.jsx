@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function PriceCard() {
   return (
@@ -48,7 +48,7 @@ function PriceCard() {
       </div>
       <p className="text-sm mt-8 text-center">
         Our <span className="text-[#8B3DFF]">pricing page</span> has full
-        details.{" "}
+        details.{' '}
         <span className="text-[#8B3DFF]">Educational organisations</span> and
         nonprofits can enjoy premium Canva features for free.
       </p>

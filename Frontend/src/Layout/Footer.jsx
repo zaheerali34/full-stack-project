@@ -1,49 +1,49 @@
-import React from "react";
-import Logo from "/logo.svg";
-import { Linkedin, Instagram, Facebook, Twitter, Youtube } from "lucide-react";
+import React from 'react';
+import Logo from '/logo.svg';
+import { Linkedin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
 
 function Footer() {
   const navItems = [
     {
       id: 1,
-      Tags: "Product",
+      Tags: 'Product',
       itemsOne: [
-        "Latest launches",
-        "Visual Suite",
-        "Magic Studio",
-        "Brand management",
-        "Social media",
-        "Features",
-        "Print",
-        "Apps Marketplace",
+        'Latest launches',
+        'Visual Suite',
+        'Magic Studio',
+        'Brand management',
+        'Social media',
+        'Features',
+        'Print',
+        'Apps Marketplace',
       ],
     },
     {
       id: 2,
-      Tags: "Resources",
+      Tags: 'Resources',
       itemsOne: [
-        "Help Center",
-        "Community",
-        "Blog",
-        "Tutorials",
-        "API Documentation",
+        'Help Center',
+        'Community',
+        'Blog',
+        'Tutorials',
+        'API Documentation',
       ],
     },
     {
       id: 3,
-      Tags: "Company",
+      Tags: 'Company',
       itemsOne: [
-        "About Us",
-        "Careers",
-        "Contact",
-        "Privacy Policy",
-        "Terms of Service",
+        'About Us',
+        'Careers',
+        'Contact',
+        'Privacy Policy',
+        'Terms of Service',
       ],
     },
   ];
   return (
     <footer>
-      <div className="w-full h-full py-10 flex items-start justify-center px-8 gap-20">
+      <div className="w-full h-full py-10 flex items-start justify-center max-md:flex-col px-8 gap-20">
         <div className="w-fit">
           <img src={Logo} alt="Logo" />
           <h4 className="mt-12 font-semibold text-[0.9rem]">
@@ -59,8 +59,8 @@ function Footer() {
           </div>
         </div>
 
-        <div className="w-full flex items-start justify-center">
-          {navItems.map((group) => (
+        <div className="w-full flex items-start justify-center max-md:flex-wrap">
+          {navItems.map(group => (
             <div key={group.id} className="w-full flex items-start">
               <div className="w-full flex items-start flex-col gap-3">
                 <h2 className="font-semibold px-4 text-zinc-700">
@@ -82,7 +82,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="w-full flex items-center justify-between px-8 py-12">
+      <div className="w-full flex items-center justify-between px-8 py-12 max-sm:flex-col gap-4">
         <div className="flex items-center gap-6">
           <Linkedin className="cursor-pointer" />
           <Instagram className="cursor-pointer" />

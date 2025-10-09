@@ -1,5 +1,5 @@
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 
 function CardImage({ activeNavItem, content }) {
   return (
@@ -11,14 +11,19 @@ function CardImage({ activeNavItem, content }) {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.2 }}
-          style={{backgroundColor: content[activeNavItem].top.bgColor, color: content[activeNavItem].top.textColor}}
-          className="w-full h-[350px] rounded-xl mt-10 flex items-center justify-between overflow-hidden cursor-pointer"
+          style={{
+            backgroundColor: content[activeNavItem].top.bgColor,
+            color: content[activeNavItem].top.textColor,
+          }}
+          className="w-full h-[350px] rounded-xl mt-10 flex items-center justify-between overflow-hidden cursor-pointer max-lg:flex-col-reverse max-lg:h-fit"
         >
-          <div className="px-12">
-            <h2 className="text-[2.1rem]">
+          <div className="px-12 max-lg:py-10 max-lg:px-4 max-lg:w-full">
+            <h2 className="text-[2.1rem] max-sm:text-[1.5rem]">
               {content[activeNavItem]?.top?.tage}
             </h2>
-            <p className="text-md">{content[activeNavItem]?.top?.pelegrah}</p>
+            <p className="text-md py-2">
+              {content[activeNavItem]?.top?.pelegrah}
+            </p>
 
             <button className="p-2 bg-white rounded-md text-md font-semibold text-zinc-800 mt-10">
               Learn more
@@ -28,11 +33,11 @@ function CardImage({ activeNavItem, content }) {
           <img
             src={content[activeNavItem]?.top?.img}
             alt=""
-            className="object-cover rounded-xl h-full"
+            className="object-cover rounded-xl h-full max-lg:w-full"
           />
         </motion.div>
       </AnimatePresence>
-      
+
       <AnimatePresence mode="wait">
         <motion.div
           key={activeNavItem}
@@ -40,7 +45,7 @@ function CardImage({ activeNavItem, content }) {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.3 }}
-          className="w-full flex items-center justify-center gap-5 mt-8"
+          className="w-full flex items-center justify-center gap-5 mt-8 max-lg:flex-wrap"
         >
           <div className="cardContainer w-full bg-white hover:shadow-2xl transition duration-500 border-[1px] cursor-pointer rounded-2xl border-zinc-300 overflow-hidden">
             <div
