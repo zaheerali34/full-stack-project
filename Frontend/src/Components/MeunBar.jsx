@@ -1,7 +1,8 @@
 import React from 'react';
 import { X } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 
-function MeunBar({ headlerClick, menu, navbar }) {
+function MeunBar({ headlerClick, menu }) {
   return (
     <section className="w-full h-screen fixed top-0 -left-0 z-50 backdrop-blur-md">
       <div className="w-2/4 max-sm:w-full h-full bg-[#ffffffe8] shadow-2xl relative">
@@ -14,15 +15,34 @@ function MeunBar({ headlerClick, menu, navbar }) {
 
         <div>
           <nav>
-            <ul className="w-full py-4 px-8 font-[font2]">
-              {navbar.map((item, index) => (
-                <li
-                  key={index}
-                  className="cursor-pointer px-2 py-3 hover:bg-zinc-300/40 rounded-md text-xl font-semibold transition-all duration-500  hover:text-zinc-900"
-                >
-                  {item}
-                </li>
-              ))}
+            <ul className="flex items-start gap-1 font-[font2] flex-col px-8">
+              <NavLink
+                to={'/design'}
+                className="w-full cursor-pointer px-2 py-4 hover:bg-zinc-100 rounded-md text-sm font-semibold  transition-all duration-500 text-zinc-800"
+              >
+                Design
+              </NavLink>
+              <NavLink
+                to={'/product'}
+                className="w-full cursor-pointer px-2 py-4 hover:bg-zinc-100 rounded-md text-sm font-semibold  transition-all duration-500 text-zinc-800"
+              >
+                Product
+              </NavLink>
+              <NavLink
+                to={'/plans'}
+                className="w-full cursor-pointer px-2 py-4 hover:bg-zinc-100 rounded-md text-sm font-semibold  transition-all duration-500 text-zinc-800"
+              >
+                Plans
+              </NavLink>
+              <NavLink className="w-full cursor-pointer px-2 py-4 hover:bg-zinc-100 rounded-md text-sm font-semibold  transition-all duration-500 text-zinc-800">
+                Business
+              </NavLink>
+              <NavLink className="w-full cursor-pointer px-2 py-4 hover:bg-zinc-100 rounded-md text-sm font-semibold  transition-all duration-500 text-zinc-800">
+                Eduction
+              </NavLink>
+              <NavLink className="w-full cursor-pointer px-2 py-4 hover:bg-zinc-100 rounded-md text-sm font-semibold  transition-all duration-500 text-zinc-800">
+                Help
+              </NavLink>
             </ul>
           </nav>
 

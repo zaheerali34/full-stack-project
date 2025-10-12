@@ -3,7 +3,7 @@ import Slider from './Slider';
 
 function Home() {
   return (
-    <div className="w-full h-screen flex items-center justify-center gap-5 flex-col overflow-hidden px-8">
+    <div className="w-full h-screen flex items-center justify-center gap-5 flex-col overflow-hidden px-8 max-sm:h-full max-sm:mt-10">
       <div className="w-fit text-center">
         <h1 className="text-[6rem] leading-14 max-md:text-[3rem] max-md:leading-10">
           What will you

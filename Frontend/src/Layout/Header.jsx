@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MeunBar from '../Components/MeunBar';
 import { Menu } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
   const [menu, setMenu] = useState(false);
@@ -9,10 +10,8 @@ function Header() {
     setMenu(setMenu(!menu));
   };
 
-  const navbar = ['Design', 'Product', 'Plans', 'Business', 'Eduction', 'Help'];
-
   return (
-    <div className="w-full flex items-center justify-between px-12 py-6">
+    <div className="w-full flex items-center justify-between px-12 py-6 max-sm:px-6">
       <div className="flex items-center gap-3">
         <button
           onClick={() => setMenu(pre => !pre)}
@@ -20,19 +19,41 @@ function Header() {
         >
           <Menu />
         </button>
-        <img src="./logo.svg" alt="logo" />
+
+        <NavLink to={'/'}>
+          <img src="./logo.svg" alt="logo" />
+        </NavLink>
       </div>
 
       <nav>
         <ul className="flex items-center gap-1 font-[font2] max-lg:hidden">
-          {navbar.map((items, idx) => (
-            <li
-              key={idx}
-              className="cursor-pointer px-2 py-1 hover:bg-zinc-100 rounded-md text-sm font-semibold  transition-all duration-500 text-zinc-800"
-            >
-              {items}
-            </li>
-          ))}
+          <NavLink
+            to={'/design'}
+            className="cursor-pointer px-2 py-1 hover:bg-zinc-100 rounded-md text-sm font-semibold  transition-all duration-500 text-zinc-800"
+          >
+            Design
+          </NavLink>
+          <NavLink
+            to={'/product'}
+            className="cursor-pointer px-2 py-1 hover:bg-zinc-100 rounded-md text-sm font-semibold transition-all duration-500 text-zinc-800"
+          >
+            Product
+          </NavLink>
+          <NavLink
+            to={'/plans'}
+            className="cursor-pointer px-2 py-1 hover:bg-zinc-100 rounded-md text-sm font-semibold transition-all duration-500 text-zinc-800"
+          >
+            Plans
+          </NavLink>
+          <NavLink className="cursor-pointer px-2 py-1 hover:bg-zinc-100 rounded-md text-sm font-semibold transition-all duration-500 text-zinc-800">
+            Business
+          </NavLink>
+          <NavLink className="cursor-pointer px-2 py-1 hover:bg-zinc-100 rounded-md text-sm font-semibold transition-all duration-500 text-zinc-800">
+            Eduction
+          </NavLink>
+          <NavLink className="cursor-pointer px-2 py-1 hover:bg-zinc-100 rounded-md text-sm font-semibold transition-all duration-500 text-zinc-800">
+            Help
+          </NavLink>
         </ul>
       </nav>
 
@@ -45,11 +66,7 @@ function Header() {
         </button>
       </div>
 
-      {menu ? (
-        <MeunBar headlerClick={headlerClick} menu={menu} navbar={navbar} />
-      ) : (
-        ''
-      )}
+      {menu ? <MeunBar headlerClick={headlerClick} menu={menu} /> : ''}
     </div>
   );
 }

@@ -198,6 +198,48 @@ const ImageDB = {
       img: 'https://content-management-files.canva.com/70d74e33-e7fb-4a22-be93-0a6c4b9908e2/Stripe-dark.svg',
     },
   ],
+
+  DesignPage: {
+    One: {
+      img: './Design/1.webp',
+      tage: 'Business Cards',
+      pelegrah:
+        'Always be ready with an on-brand business card to hand out in-store or at networking events.',
+      bgColor: '#FFD200',
+    },
+
+    Two: {
+      img: './Design/2.webp',
+      tage: 'Tote bags',
+      pelegrah:
+        'Quickly erase anything unwanted from your images in just a few clicks.',
+      bgColor: '#E4D7FF',
+    },
+
+    Three: {
+      img: './Design/3.webp',
+      tage: 'Brochures',
+      pelegrah:
+        'Write fast with tools that help you express ideas clearly, in your own voice.',
+      bgColor: '#F0CDFF',
+    },
+
+    Four: {
+      img: './Design/4.webp',
+      tage: 'Photo Editor',
+      pelegrah:
+        'Click to adjust, crop, or clean up any photo — no design skills needed.',
+      bgColor: '#E7DBFF',
+    },
+
+    Five: {
+      img: './Design/5.webp',
+      tage: 'Posters',
+      pelegrah:
+        'Promote your brand, decorate your classroom, or brighten your home with an attention-grabbing poster.',
+      bgColor: '#F6AA49',
+    },
+  },
 };
 
 export default ImageDB;
