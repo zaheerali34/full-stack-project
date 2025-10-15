@@ -1,7 +1,7 @@
 import React from 'react';
 
 function PlansPage() {
-  return <div>PlansPage</div>;
+  return <div></div>;
 }
 
 export default PlansPage;

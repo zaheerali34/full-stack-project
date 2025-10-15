@@ -240,6 +240,32 @@ const ImageDB = {
       bgColor: '#F6AA49',
     },
   },
+
+  ProductPage: {
+    One: {
+      img: './Product/sliderOne.webp',
+      tage: 'Business Cards',
+      pelegrah:
+        'Always be ready with an on-brand business card to hand out in-store or at networking events.',
+      bgColor: '#FFD200',
+    },
+
+    Two: {
+      img: './Product/sliderTwo.webp',
+      tage: 'Tote bags',
+      pelegrah:
+        'Quickly erase anything unwanted from your images in just a few clicks.',
+      bgColor: '#E4D7FF',
+    },
+
+    Three: {
+      img: './Product/sliderThree.webp',
+      tage: 'Brochures',
+      pelegrah:
+        'Write fast with tools that help you express ideas clearly, in your own voice.',
+      bgColor: '#F0CDFF',
+    },
+  },
 };
 
 export default ImageDB;
