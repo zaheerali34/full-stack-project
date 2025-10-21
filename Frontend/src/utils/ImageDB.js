@@ -266,6 +266,34 @@ const ImageDB = {
       bgColor: '#F0CDFF',
     },
   },
+
+  PlansPage: [
+    {
+      id: 3,
+      img: '/Plans/Three.webp',
+      title: 'Case studies',
+      description:
+        'Discover how schools and trust administrators are using Canva Education to deliver creative and collaborative learning.',
+      button_text: 'View case studies',
+      bgColor: '#FFE0E4',
+    },
+    {
+      id: 4,
+      img: '/Plans/Four.webp',
+      title: 'Join our community',
+      description:
+        'Canva Teachers Community is an exclusive group for school teachers that aims to empower teachers by using Canva as a tool to educate.',
+      bgColor: '#FFEFE7',
+    },
+    {
+      id: 5,
+      img: '/Plans/five.webp',
+      title: 'Creators programme',
+      description:
+        'Create, publish and earn from your education templates in Canva. Education Creators is a new programme that enables educators to share their designs with teaching communities worldwide.',
+      bgColor: '#E0F9EB',
+    },
+  ],
 };
 
 export default ImageDB;
