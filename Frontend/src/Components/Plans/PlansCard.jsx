@@ -5,13 +5,13 @@ import Three from '/Plans/3.webp';
 
 function PlansCard() {
   return (
-    <div className="w-full flex items-center justify-center py-20 flex-col px-32">
-      <h1 className="text-[2rem] w-2/4 text-center font-semibold leading-10">
+    <div className="w-full flex items-center justify-center py-20 flex-col px-32 max-md:px-10 max-sm:px-4">
+      <h1 className="text-[2rem] w-2/4 text-center font-semibold leading-10 max-md:w-full">
         Visual communication and collaboration is an important tool for learning
       </h1>
 
-      <div className="w-full flex items-center justify-between mt-10 gap-10">
-        <div className="text-center flex flex-col items-center gap-5 w-1/4">
+      <div className="w-full flex items-center justify-between mt-10 gap-10 max-md:flex-col">
+        <div className="text-center flex flex-col items-center gap-5 w-1/4 max-md:w-full">
           <img src={One} alt="One Image" className="w-2/5" />
           <h2 className="text-2xl font-semibold">
             Increase engagement with original content
@@ -22,7 +22,7 @@ function PlansCard() {
           </p>
         </div>
 
-        <div className="text-center flex flex-col items-center gap-5 w-1/4">
+        <div className="text-center flex flex-col items-center gap-5 w-1/4 max-md:w-full">
           <img src={Two} alt="One Image" className="w-2/5" />
           <h2 className="text-2xl font-semibold">
             Deliver impactful feedback in one place
@@ -34,7 +34,7 @@ function PlansCard() {
           </p>
         </div>
 
-        <div className="text-center flex flex-col items-center gap-5 w-1/4">
+        <div className="text-center flex flex-col items-center gap-5 w-1/4 max-md:w-full">
           <img src={Three} alt="One Image" className="w-2/5" />
           <h2 className="text-2xl font-semibold">
             Help students build critical skills
