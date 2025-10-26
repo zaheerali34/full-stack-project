@@ -9,7 +9,7 @@ import Footer from './Layout/Footer';
 
 function App() {
   return (
-    <div className="font-[font1]">
+    <div className="main font-[font1]">
       <Header />
       <Routes>
         <Route path="/" element={<LandingPage />} />
