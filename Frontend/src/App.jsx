@@ -6,6 +6,7 @@ import PlanPage from './Pages/PlansPage';
 import ProductPage from './Pages/ProductPage';
 import Header from './Layout/Header';
 import Footer from './Layout/Footer';
+import CanvaInterface from './Components/Dashboard/CanvaInterface';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/design" element={<DesignPage />} />
         <Route path="/plans" element={<PlanPage />} />
         <Route path="/product" element={<ProductPage />} />
+        <Route path="/dashboard" element={<CanvaInterface />} />
       </Routes>
       <Footer />
     </div>
