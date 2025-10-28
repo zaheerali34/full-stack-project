@@ -32,7 +32,7 @@ function Login({ sign, setSign }) {
               Log in or sign up in seconds
             </h1>
             <p className="text-[16px] text-zinc-700 max-lg:text-[12px]">
-              Use your email or another service to continue with Canva (it's
+              Use your email or another service to continue with Canva (it&apos;s
               free)!
             </p>
             <button className="w-full text-zinc-800 border-2 border-zinc-200 py-[5px] px-4 rounded-[10px] flex items-center gap-10 text-center hover:bg-zinc-100 cursor-pointer font-semibold max-lg:justify-center max-lg:gap-4">
@@ -55,7 +55,7 @@ function Login({ sign, setSign }) {
               Continue another way
             </button>
             <p className="text-[13px] w-full">
-              By continuing, you agree to Canva's{' '}
+              By continuing, you agree to Canva&apos;s{' '}
               <span className="text-blue-500 underline cursor-pointer">
                 Terms of Use
               </span>

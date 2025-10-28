@@ -46,7 +46,7 @@ function MeunBar({ headlerClick, menu }) {
             </ul>
           </nav>
 
-          <div className="w-full flex flex-col gap-3 items-center px-8 absolute bottom-4">
+          <div className="w-full flex flex-col gap-3 items-center px-8 absolute bottom-4 max-sm:bottom-10">
             <button className="w-full px-5 py-[10px] bg-white rounded-[8px] font-semibold text-zinc-900 hover:bg-zinc-300 transition duration-500 cursor-pointer border-1 border-zinc-400">
               Sign up
             </button>
