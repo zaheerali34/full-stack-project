@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Search,
   Sliders,
@@ -15,7 +15,6 @@ import {
 import Sidebar from './Sidebar';
 
 export default function CanvaInterface() {
-
   const designTools = [
     { icon: <TableCellsMerge />, label: 'Sheet', color: 'bg-blue-500' },
     { icon: <BookText />, label: 'Doc', color: 'bg-teal-500' },

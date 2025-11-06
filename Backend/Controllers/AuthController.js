@@ -10,6 +10,11 @@ const Signup = async (req, res, next) => {
         .json({ message: "Request body is required", success: false });
     }
     const { email, password, username, createdAt } = req.body;
+    if (!email || !password || !username) {
+      return res
+        .status(400)
+        .json({ message: "Email, username, and password are required", success: false });
+    }
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.json({ message: "User already exists" });
@@ -62,4 +67,4 @@ const Login = async (req, res, next) => {
   }
 };
 
-export default { Signup, Login };
+export { Signup, Login };

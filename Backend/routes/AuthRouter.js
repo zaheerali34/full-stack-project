@@ -1,4 +1,4 @@
-import Signup from "../Controllers/AuthController.js";
+import { Signup, Login } from "../Controllers/AuthController.js";
 import userVerification from "../Middlewares/AuthMiddleware.js";
 import { Router } from "express";
 

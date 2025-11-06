@@ -7,6 +7,8 @@ import ProductPage from './Pages/ProductPage';
 import Header from './Layout/Header';
 import Footer from './Layout/Footer';
 import CanvaInterface from './Components/Dashboard/CanvaInterface';
+import Signup from './Components/Auth/Signup';
+import ProtectedRoute from './Components/Auth/ProtectedRoute';
 
 function App() {
   return (
@@ -17,7 +19,15 @@ function App() {
         <Route path="/design" element={<DesignPage />} />
         <Route path="/plans" element={<PlanPage />} />
         <Route path="/product" element={<ProductPage />} />
-        <Route path="/dashboard" element={<CanvaInterface />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <CanvaInterface />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
       <Footer />
     </div>

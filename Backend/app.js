@@ -14,7 +14,7 @@ const mongoURL = process.env.MONGOURL;
 // Middleware
 app.use(
     cors({
-        origin: ["http://localhost:3000"],
+        origin: ["http://localhost:5173"],
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
     })
@@ -25,9 +25,24 @@ app.use(cookieParser());
 app.use("/", authRoute)
 
 // MongoDB connection
-mongoose.connect(mongoURL)
-.then(()=> console.log("MongoDB is connected successfully"))
-.catch((err)=> console.log(err))
+const connectDB = async () => {
+    try {
+        await mongoose.connect(mongoURL, {
+            serverSelectionTimeoutMS: 5000,
+            socketTimeoutMS: 45000,
+        });
+        console.log("MongoDB is connected successfully");
+    } catch (err) {
+        console.error("MongoDB connection error:", err.message);
+        console.error("\nPlease check:");
+        console.error("1. Your IP is whitelisted in MongoDB Atlas Network Access");
+        console.error("2. Your MONGOURL in .env is correct");
+        console.error("3. Your MongoDB Atlas cluster is running");
+        process.exit(1);
+    }
+};
+
+connectDB();
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
