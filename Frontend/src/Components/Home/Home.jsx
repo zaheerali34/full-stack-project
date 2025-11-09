@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from './Slider';
+import { NavLink } from 'react-router-dom';
 
 function Home() {
   return (
@@ -17,9 +18,11 @@ function Home() {
         <p className="text-[19px] py-1 text-zinc-700 max-sm:text-[15px]">
           With Canva you can design, generate, and work on anything.
         </p>
-        <button className="bg-[#9653f5] px-5 py-[13px] rounded-[8px] text-white font-semibold hover:bg-[#7628e5] transition duration-500 cursor-pointer mt-4 max-md:w-full">
+        <NavLink to={"/dashboard"}>
+          <button className="bg-[#9653f5] px-5 py-[13px] rounded-[8px] text-white font-semibold hover:bg-[#7628e5] transition duration-500 cursor-pointer mt-4 max-md:w-full">
           Start Designing
         </button>
+        </NavLink>
       </div>
 
       <Slider />

@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import cors from "cors";
 import cookieParser from 'cookie-parser';
 import authRoute  from './routes/AuthRouter.js';
+import userVerification from './Middlewares/AuthMiddleware.js';
 
 dotenv.config();
 const app = express();
@@ -24,6 +25,12 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/", authRoute)
 
+
+app.get("/user", userVerification, (req, res) => {
+    res.json({});
+});
+
+
 // MongoDB connection
 const connectDB = async () => {
     try {
@@ -34,11 +41,6 @@ const connectDB = async () => {
         console.log("MongoDB is connected successfully");
     } catch (err) {
         console.error("MongoDB connection error:", err.message);
-        console.error("\nPlease check:");
-        console.error("1. Your IP is whitelisted in MongoDB Atlas Network Access");
-        console.error("2. Your MONGOURL in .env is correct");
-        console.error("3. Your MongoDB Atlas cluster is running");
-        process.exit(1);
     }
 };
 

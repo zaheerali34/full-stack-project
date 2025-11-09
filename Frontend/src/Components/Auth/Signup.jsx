@@ -58,7 +58,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="w-full h-screen flex flex-col items-center justify-center">
       <div className="bg-white p-6 rounded-lg shadow-md w-96">
         <h2 className="text-2xl font-bold mb-4">Signup Account</h2>
         <form onSubmit={handleSubmit}>

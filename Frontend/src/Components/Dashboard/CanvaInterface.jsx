@@ -1,8 +1,6 @@
 import React from 'react';
 import {
   Search,
-  Sliders,
-  ChevronRight,
   TableCellsMerge,
   BookText,
   Dice5,
@@ -60,7 +58,7 @@ export default function CanvaInterface() {
   ];
 
   return (
-    <div className="w-full flex h-full relative">
+    <div className="w-full flex h-full relative py-4">
       <Sidebar />
 
       <div

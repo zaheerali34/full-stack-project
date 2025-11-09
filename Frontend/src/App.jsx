@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import LandingPage from './Pages/LandingPage';
 import DesignPage from './Pages/DesignPage';
 import PlanPage from './Pages/PlansPage';
@@ -11,9 +11,15 @@ import Signup from './Components/Auth/Signup';
 import ProtectedRoute from './Components/Auth/ProtectedRoute';
 
 function App() {
+  const location = useLocation();
+  const hideHeaderFooterRoutes = ['/signup', '/dashboard'];
+
+  const shouldHideHeaderFooter = hideHeaderFooterRoutes.includes(location.pathname);
+
   return (
     <div className="main font-[font1]">
-      <Header />
+      {!shouldHideHeaderFooter && <Header />}
+
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/design" element={<DesignPage />} />
@@ -29,7 +35,8 @@ function App() {
         />
         <Route path="/signup" element={<Signup />} />
       </Routes>
-      <Footer />
+
+      {!shouldHideHeaderFooter && <Footer />}
     </div>
   );
 }

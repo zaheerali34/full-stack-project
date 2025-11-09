@@ -22,3 +22,4 @@ const userVerification = (req, res)=> {
 }
 
 export default userVerification;
+

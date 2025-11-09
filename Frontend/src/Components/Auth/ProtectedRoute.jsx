@@ -29,7 +29,9 @@ const ProtectedRoute = ({ children }) => {
   if (loading) {
     return (
       <div className="w-full h-screen flex items-center justify-center">
-        <div className="text-xl">Loading...</div>
+        <div className="text-xl">
+          <img src="ripples.svg" alt="" className='w-full' />
+        </div>
       </div>
     );
   }
