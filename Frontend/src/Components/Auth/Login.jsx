@@ -3,15 +3,15 @@ import { X, Mail } from 'lucide-react';
 import facebook from '/facebook-new.png';
 import google from '/google.png';
 import { motion } from 'framer-motion';
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login({ sign, setSign }) {
-   const navigate = useNavigate();
-  const [inputValue, setInputValue] = useState({email: "", password: ""});
-    const { email, password } = inputValue;
- const handleOnChange = (e) => {
+  const navigate = useNavigate();
+  const [inputValue, setInputValue] = useState({ email: '', password: '' });
+  const { email, password } = inputValue;
+  const handleOnChange = e => {
     const { name, value } = e.target;
     setInputValue({
       ...inputValue,
@@ -19,20 +19,20 @@ function Login({ sign, setSign }) {
     });
   };
 
-  const handleError = (err) =>
+  const handleError = err =>
     toast.error(err, {
-      position: "bottom-left",
+      position: 'bottom-left',
     });
-  const handleSuccess = (msg) =>
+  const handleSuccess = msg =>
     toast.success(msg, {
-      position: "bottom-left",
+      position: 'bottom-left',
     });
 
-     const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/login",
+        'http://localhost:3000/login',
         {
           ...inputValue,
         },
@@ -43,7 +43,7 @@ function Login({ sign, setSign }) {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          navigate("/dashboard");
+          navigate('/dashboard');
         }, 1000);
       } else {
         handleError(message);
@@ -53,8 +53,8 @@ function Login({ sign, setSign }) {
     }
     setInputValue({
       ...inputValue,
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     });
   };
 
@@ -88,31 +88,59 @@ function Login({ sign, setSign }) {
               Use your email or another service to continue with Canva
               (it&apos;s free)!
             </p>
-           
-           
-         <form onSubmit={handleSubmit}>
-            <div className='full w-full flex flex-col gap-4'>
-             <input type="email" value={email} onChange={handleOnChange} name="email" placeholder='Enter your email' className='w-full border-2 outline-none py-3 px-4 border-md rounded-xl border-gray-200'/>
-             <input type="password" value={password} onChange={handleOnChange} name="password" placeholder='Enter your password' className='w-full border-2 outline-none py-3 px-4 border-md rounded-xl border-gray-200'/>
-             <button type='submit' className='w-full bg-blue-500 text-white py-3 rounded-xl hover:bg-blue-600 cursor-pointer'>Submit</button>
-           </div>
 
-          <div className='w-full flex items-center gap-4 mt-4 max-sm:flex-col'>
-               <button className="w-full text-zinc-800 border-2 border-zinc-200 py-[7px] px-2 rounded-[10px] flex items-center gap-2 text-center hover:bg-zinc-100 cursor-pointer font-semibold max-lg:justify-center max-lg:gap-4">
-              <img
-                src={facebook}
-                alt="image icone facebook"
-                className="w-[35px]"
-              />
-              <span className='text-[10px] font-bold'>Continue with Facebook</span>
-            </button>
-            <button className="w-full text-zinc-800 border-2 border-zinc-200 py-[7px] px-2 rounded-[10px] flex items-center gap-2 text-center hover:bg-zinc-100 cursor-pointer font-semibold max-lg:justify-center max-lg:gap-4">
-              <img src={google} alt="image icone google" className="w-[35px]" />
-              <span className='text-[10px] font-bold'>Continue with Google</span>
-            </button>
-          </div>
-         </form>
+            <form
+              onSubmit={handleSubmit}
+              className="w-full flex flex-col gap-6"
+            >
+              <div className=" w-full flex flex-col gap-4">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={handleOnChange}
+                  name="email"
+                  placeholder="Enter your email"
+                  className="w-full border-2 outline-none py-3 px-4 border-md rounded-xl border-gray-200"
+                />
+                <input
+                  type="password"
+                  value={password}
+                  onChange={handleOnChange}
+                  name="password"
+                  placeholder="Enter your password"
+                  className="w-full border-2 outline-none py-3 px-4 border-md rounded-xl border-gray-200"
+                />
+                <button
+                  type="submit"
+                  className="w-full bg-blue-500 text-white py-3 rounded-xl hover:bg-blue-600 cursor-pointer"
+                >
+                  Submit
+                </button>
+              </div>
 
+              <div className="w-full">
+                <button className="w-full text-zinc-800 border-2 border-zinc-200 py-[7px] px-2 rounded-[10px] flex items-center justify-center gap-2 text-center hover:bg-zinc-100 cursor-pointer font-semibold">
+                  <img
+                    src={facebook}
+                    alt="image icone facebook"
+                    className="w-[35px]"
+                  />
+                  <span className="text-[13px] font-bold">
+                    Continue with Facebook
+                  </span>
+                </button>
+                <button className="w-full text-zinc-800 border-2 border-zinc-200 py-[7px] px-2 rounded-[10px] flex items-center justify-center gap-2 text-center hover:bg-zinc-100 cursor-pointer font-semibold mt-2">
+                  <img
+                    src={google}
+                    alt="image icone google"
+                    className="w-[35px]"
+                  />
+                  <span className="text-[13px] font-bold">
+                    Continue with Google
+                  </span>
+                </button>
+              </div>
+            </form>
 
             <p className="text-[13px] w-full">
               By continuing, you agree to Canva&apos;s{' '}
@@ -131,8 +159,7 @@ function Login({ sign, setSign }) {
         </div>
       </motion.div>
 
-            <ToastContainer />
-
+      <ToastContainer />
     </div>
   );
 }

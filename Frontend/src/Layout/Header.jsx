@@ -64,11 +64,11 @@ function Header() {
       </nav>
 
       <div className="flex gap-3 items-center">
-       <NavLink to={'/signup'}>
-         <button className="px-3 py-[4px] border-[1px] rounded-[8px] border-zinc-200 font-semibold text-zinc-700 hover:bg-zinc-100 transition duration-500 cursor-pointer max-md:hidden">
-          Sign up
-        </button>
-       </NavLink>
+        <NavLink to={'/signup'}>
+          <button className="px-3 py-[4px] border-[1px] rounded-[8px] border-zinc-200 font-semibold text-zinc-700 hover:bg-zinc-100 transition duration-500 cursor-pointer max-md:hidden">
+            Sign up
+          </button>
+        </NavLink>
         {sign ? (
           <button
             onClick={headlerSign}

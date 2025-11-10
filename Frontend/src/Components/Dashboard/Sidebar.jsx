@@ -47,8 +47,15 @@ function Sidebar() {
       </div>
 
       <div className="mt-[14rem] space-y-6 max-sm:hidden">
-        <button onClick={headlerSetting} className="w-12 h-12 bg-zinc-400 rounded-full cursor-pointer hover:shadow-lg transition border-2 border-zinc-900 overflow-hidden">
-          <img src="https://assets3.thrillist.com/v1/image/3126658/1584x1056/crop;webp=auto;jpeg_quality=60;progressive.jpg" alt="this image" className='w-full h-full object-cover' />
+        <button
+          onClick={headlerSetting}
+          className="w-12 h-12 bg-zinc-400 rounded-full cursor-pointer hover:shadow-lg transition border-2 border-zinc-900 overflow-hidden"
+        >
+          <img
+            src="https://assets3.thrillist.com/v1/image/3126658/1584x1056/crop;webp=auto;jpeg_quality=60;progressive.jpg"
+            alt="this image"
+            className="w-full h-full object-cover"
+          />
         </button>
       </div>
 

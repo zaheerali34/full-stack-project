@@ -14,7 +14,9 @@ function App() {
   const location = useLocation();
   const hideHeaderFooterRoutes = ['/signup', '/dashboard'];
 
-  const shouldHideHeaderFooter = hideHeaderFooterRoutes.includes(location.pathname);
+  const shouldHideHeaderFooter = hideHeaderFooterRoutes.includes(
+    location.pathname
+  );
 
   return (
     <div className="main font-[font1]">

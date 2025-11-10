@@ -30,13 +30,13 @@ const ProtectedRoute = ({ children }) => {
     return (
       <div className="w-full h-screen flex items-center justify-center">
         <div className="text-xl">
-          <img src="ripples.svg" alt="" className='w-full' />
+          <img src="ripples.svg" alt="" className="w-full" />
         </div>
       </div>
     );
   }
 
-  return isAuthenticated ? children : <Navigate to="/dashboard" replace />;
+  return isAuthenticated ? children : <Navigate to="/signup" replace />;
 };
 
 export default ProtectedRoute;
