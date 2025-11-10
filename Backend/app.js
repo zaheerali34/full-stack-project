@@ -3,8 +3,10 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from "cors";
 import cookieParser from 'cookie-parser';
+import session from 'express-session';
 import authRoute  from './routes/AuthRouter.js';
-import userVerification from './Middlewares/AuthMiddleware.js';
+import passport from "passport";
+import GitHubStrategy from "passport-github";
 
 dotenv.config();
 const app = express();
@@ -21,15 +23,44 @@ app.use(
     })
 )
 
-app.use(express.json());
-app.use(cookieParser());
-app.use("/", authRoute)
+passport.use(new GitHubStrategy({
+    clientID: process.env.GITHUB_CLIENT_ID,
+    clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    callbackURL: "/auth/github/callback"
+}, (accessToken, refreshToken, profile, done) => {
+    done(null, profile);
+}));
 
-
-app.get("/user", userVerification, (req, res) => {
-    res.json({});
+passport.serializeUser((user, done) => {
+    done(null, user);
 });
 
+passport.deserializeUser((user, done) => {
+    done(null, user);
+});
+
+app.use(express.json());
+app.use(cookieParser());
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'your-secret-key',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false } // Set to true if using HTTPS
+}));
+app.use(passport.initialize())
+app.use(passport.session());
+app.use("/", authRoute)
+
+app.get("/auth/github", passport.authenticate("github"));
+
+app.get("/", (req, res)=> {
+    res.send('Hello World');
+});
+
+app.get("/auth/github/callback", passport.authenticate("github", {
+    successRedirect: "http://localhost:5173/profile",
+    failureRedirect: "http://localhost:5173/login"
+}));
 
 // MongoDB connection
 const connectDB = async () => {
@@ -49,4 +80,10 @@ connectDB();
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+
+
+
+
+
 
