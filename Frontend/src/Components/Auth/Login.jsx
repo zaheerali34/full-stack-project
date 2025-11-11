@@ -117,8 +117,9 @@ function Login({ sign, setSign }) {
                   Submit
                 </button>
               </div>
+            </form>
 
-              <div className="w-full">
+            <div className="w-full">
                 <button className="w-full text-zinc-800 border-2 border-zinc-200 py-[7px] px-2 rounded-[10px] flex items-center justify-center gap-2 text-center hover:bg-zinc-100 cursor-pointer font-semibold">
                   <img
                     src={facebook}
@@ -129,18 +130,20 @@ function Login({ sign, setSign }) {
                     Continue with Facebook
                   </span>
                 </button>
-                <button className="w-full text-zinc-800 border-2 border-zinc-200 py-[7px] px-2 rounded-[10px] flex items-center justify-center gap-2 text-center hover:bg-zinc-100 cursor-pointer font-semibold mt-2">
+
+              <a href="http://localhost:3000/auth/github"  target="_blank">
+                     <button className="w-full text-zinc-800 border-2 border-zinc-200 py-[7px] px-2 rounded-[10px] flex items-center justify-center gap-2 text-center hover:bg-zinc-100 cursor-pointer font-semibold mt-2">
                   <img
                     src={google}
                     alt="image icone google"
                     className="w-[35px]"
                   />
                   <span className="text-[13px] font-bold">
-                    Continue with Google
+                    Continue with Github
                   </span>
                 </button>
+              </a>
               </div>
-            </form>
 
             <p className="text-[13px] w-full">
               By continuing, you agree to Canva&apos;s{' '}

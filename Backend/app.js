@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from "cors";
 import cookieParser from 'cookie-parser';
-import session from 'express-session';
 import authRoute  from './routes/AuthRouter.js';
 import passport from "passport";
 import GitHubStrategy from "passport-github";
@@ -17,11 +16,11 @@ const mongoURL = process.env.MONGOURL;
 // Middleware
 app.use(
     cors({
-        origin: ["http://localhost:5173"],
+        origin: "http://localhost:3000/",
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
     })
-)
+);
 
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
@@ -31,31 +30,13 @@ passport.use(new GitHubStrategy({
     done(null, profile);
 }));
 
-passport.serializeUser((user, done) => {
-    done(null, user);
-});
-
-passport.deserializeUser((user, done) => {
-    done(null, user);
-});
-
 app.use(express.json());
 app.use(cookieParser());
-app.use(session({
-    secret: process.env.SESSION_SECRET || 'your-secret-key',
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: false } // Set to true if using HTTPS
-}));
 app.use(passport.initialize())
 app.use(passport.session());
 app.use("/", authRoute)
 
 app.get("/auth/github", passport.authenticate("github"));
-
-app.get("/", (req, res)=> {
-    res.send('Hello World');
-});
 
 app.get("/auth/github/callback", passport.authenticate("github", {
     successRedirect: "http://localhost:5173/profile",
