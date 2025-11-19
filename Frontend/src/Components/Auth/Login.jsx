@@ -5,59 +5,42 @@ import google from '/google.png';
 import { motion } from 'framer-motion';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 function Login({ sign, setSign }) {
   const navigate = useNavigate();
-  const [inputValue, setInputValue] = useState({ email: '', password: '' });
-  const { email, password } = inputValue;
-  const handleOnChange = e => {
-    const { name, value } = e.target;
-    setInputValue({
-      ...inputValue,
-      [name]: value,
-    });
-  };
 
-  const handleError = err =>
-    toast.error(err, {
-      position: 'bottom-left',
-    });
-  const handleSuccess = msg =>
-    toast.success(msg, {
-      position: 'bottom-left',
-    });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleSubmit = async e => {
-    e.preventDefault();
+  const onSubmit = async data => {
     try {
-      const { data } = await axios.post(
+      const { data: res } = await axios.post(
         'http://localhost:3000/login',
-        {
-          ...inputValue,
-        },
+        data,
         { withCredentials: true }
       );
-      console.log(data);
-      const { success, message } = data;
-      if (success) {
-        handleSuccess(message);
+
+      if (res && res.success) {
+        toast.success(res.message || 'Login successful! Redirecting...');
         setTimeout(() => {
           navigate('/dashboard');
         }, 1000);
       } else {
-        handleError(message);
+        toast.error(res.message || 'Login failed');
       }
     } catch (error) {
-      console.log(error);
+      toast.error(
+        error.response && error.response.data && error.response.data.message
+          ? error.response.data.message
+          : `Signup error: ${error.message}`
+      );
     }
-    setInputValue({
-      ...inputValue,
-      email: '',
-      password: '',
-    });
   };
-
   return (
     <div className="login w-full h-screen fixed top-0 -left-0 z-50 backdrop-blur-[3px]  grid place-items-center bg-[#00000081]">
       <motion.div
@@ -90,22 +73,22 @@ function Login({ sign, setSign }) {
             </p>
 
             <form
-              onSubmit={handleSubmit}
+              onSubmit={handleSubmit(onSubmit)}
               className="w-full flex flex-col gap-6"
             >
               <div className=" w-full flex flex-col gap-4">
                 <input
                   type="email"
-                  value={email}
-                  onChange={handleOnChange}
+                  {...register('email', { required: 'Email is required' })}
                   name="email"
                   placeholder="Enter your email"
                   className="w-full border-2 outline-none py-3 px-4 border-md rounded-xl border-gray-200"
                 />
                 <input
                   type="password"
-                  value={password}
-                  onChange={handleOnChange}
+                  {...register('password', {
+                    required: 'Password is required',
+                  })}
                   name="password"
                   placeholder="Enter your password"
                   className="w-full border-2 outline-none py-3 px-4 border-md rounded-xl border-gray-200"
@@ -120,19 +103,19 @@ function Login({ sign, setSign }) {
             </form>
 
             <div className="w-full">
-                <button className="w-full text-zinc-800 border-2 border-zinc-200 py-[7px] px-2 rounded-[10px] flex items-center justify-center gap-2 text-center hover:bg-zinc-100 cursor-pointer font-semibold">
-                  <img
-                    src={facebook}
-                    alt="image icone facebook"
-                    className="w-[35px]"
-                  />
-                  <span className="text-[13px] font-bold">
-                    Continue with Facebook
-                  </span>
-                </button>
+              <button className="w-full text-zinc-800 border-2 border-zinc-200 py-[7px] px-2 rounded-[10px] flex items-center justify-center gap-2 text-center hover:bg-zinc-100 cursor-pointer font-semibold">
+                <img
+                  src={facebook}
+                  alt="image icone facebook"
+                  className="w-[35px]"
+                />
+                <span className="text-[13px] font-bold">
+                  Continue with Facebook
+                </span>
+              </button>
 
-              <a href="http://localhost:3000/auth/github"  target="_blank">
-                     <button className="w-full text-zinc-800 border-2 border-zinc-200 py-[7px] px-2 rounded-[10px] flex items-center justify-center gap-2 text-center hover:bg-zinc-100 cursor-pointer font-semibold mt-2">
+              <a href="http://localhost:3000/auth/github" target="_blank">
+                <button className="w-full text-zinc-800 border-2 border-zinc-200 py-[7px] px-2 rounded-[10px] flex items-center justify-center gap-2 text-center hover:bg-zinc-100 cursor-pointer font-semibold mt-2">
                   <img
                     src={google}
                     alt="image icone google"
@@ -143,7 +126,7 @@ function Login({ sign, setSign }) {
                   </span>
                 </button>
               </a>
-              </div>
+            </div>
 
             <p className="text-[13px] w-full">
               By continuing, you agree to Canva&apos;s{' '}
