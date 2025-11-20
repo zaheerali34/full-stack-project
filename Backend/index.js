@@ -7,12 +7,15 @@ import session from "express-session";
 import authRoute from "./routes/AuthRouter.js";
 import passport from "passport";
 import GitHubStrategy from "passport-github";
+import path from "path";
 
 dotenv.config();
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 const mongoURL = process.env.MONGOURL;
+
+const __dirname = path.resolve();
 
 // Middleware
 app.use(
@@ -74,6 +77,14 @@ const connectDB = async () => {
 };
 
 connectDB();
+
+// Start the server
+app.use(express.static(path.join(__dirname, "/Frontend/dist")));
+
+// Fallback route for SPA
+app.get((req, res) => {
+  res.sendFile(path.join(__dirname, "Frontend", "dist", "index.html"));
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

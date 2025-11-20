@@ -15,6 +15,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
     "axios": "^1.13.2",
+    "backend": "file:..",
     "jest": "^30.2.0",
     "jsdom": "^27.0.0",
     "lucide-react": "^0.544.0",
