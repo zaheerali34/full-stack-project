@@ -17,7 +17,7 @@ const Signup = () => {
   const onSubmit = async data => {
     try {
       const { data: res } = await axios.post(
-        'http://localhost:3000/signup',
+        'https://full-stack-project-3-gyov.onrender.com/signup',
         data,
         { withCredentials: true }
       );

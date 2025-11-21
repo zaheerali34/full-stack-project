@@ -9,7 +9,7 @@ function Setting() {
 
   const handleLogout = async () => {
     try {
-      await axios.get('http://localhost:3000/logout', { withCredentials: true });
+      await axios.get('https://full-stack-project-3-gyov.onrender.com/logout', { withCredentials: true });
       navigate('/');
     } catch (error) {
       console.error('Logout failed:', error); 

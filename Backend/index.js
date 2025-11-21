@@ -20,7 +20,7 @@ const __dirname = path.resolve();
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://full-stack-project-3-gyov.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })

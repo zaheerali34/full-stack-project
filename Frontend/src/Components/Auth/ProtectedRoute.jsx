@@ -10,7 +10,7 @@ const ProtectedRoute = ({ children }) => {
     const verifyUser = async () => {
       try {
         const { data } = await axios.post(
-          'http://localhost:3000/',
+          'https://full-stack-project-3-gyov.onrender.com/',
           {},
           { withCredentials: true }
         );
